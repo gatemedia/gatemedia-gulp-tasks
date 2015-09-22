@@ -39,23 +39,23 @@ module.exports = function (gulp, settings) {
   });
   gulp.task('demo', function () {
     runSequence('clean',
-      ['code-assets',
+      [ 'code-assets',
+        'coding-style',
         'unit-test-assets',
-        'demo-styles', 'demo-assets', 'demo-index',
-        'coding-style'
+        'demo-styles', 'demo-assets', 'demo-index'
       ],
       ['serve', 'watch']);
   });
 
-  gulp.task('unit-test', function () {
+  gulp.task('test', function () {
     runSequence('clean',
-      ['images', 'styles', 'js-core', 'js-addons',
-        'unit-test-assets', 'test/unit/assets-cli',
-        'coding-style'
+      [ 'code-assets',
+        'coding-style',
+        'unit-test-assets',
+        'test/unit/assets-cli'
       ],
       'test/unit/run');
   });
-  gulp.task('test', ['unit-test']);
 
   if (settings.production) {
     util.log(chalk.bold.blue('=== PRODUCTION BUILD ==='));
