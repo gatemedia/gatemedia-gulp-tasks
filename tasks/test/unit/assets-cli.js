@@ -12,7 +12,7 @@ module.exports = function (gulp) {
       .pipe(rename({ suffix: '-cli' }))
       .pipe(swig({
         data: {
-          projectVersion: utils.getPackageVersion(),
+          projectVersion: utils.getPackage().version,
           inBrowser: false
         }
       }))

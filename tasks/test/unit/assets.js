@@ -10,7 +10,7 @@ module.exports = function (gulp) {
     ])
       .pipe(swig({
         data: {
-          projectVersion: utils.getPackageVersion(),
+          projectVersion: utils.getPackage().version,
           inBrowser: true
         },
         defaults: {

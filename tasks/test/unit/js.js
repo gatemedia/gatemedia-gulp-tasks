@@ -8,7 +8,7 @@ module.exports = function (gulp, settings) {
     entries: glob.sync('./tests/unit/**/*.js'),
     namespace: 'GM.UnitTests',
     output: {
-      filename: settings.project.name + '-unit-tests-' + settings.project.version + '.js',
+      filename: utils.getPackage().name + '-unit-tests-' + utils.getPackage().version + '.js',
       directory: './dist/tests'
     }
   });

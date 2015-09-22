@@ -7,7 +7,7 @@ module.exports = function (gulp, settings) {
     entries: [settings.project.addonEntries],
     namespace: settings.project.addonsNamespace,
     output: {
-      filename: settings.project.name + '-addons-' + settings.project.version + '.js',
+      filename: utils.getPackage().name + '-addons-' + utils.getPackage().version + '.js',
       directory: './dist'
     }
   });

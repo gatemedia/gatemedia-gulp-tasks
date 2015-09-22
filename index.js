@@ -18,6 +18,15 @@ function defineTasks (gulp, settings, obj, prefix) {
 }
 
 module.exports = function (gulp, settings) {
+  function ensureSetting (name, defaultValue) {
+    if (settings[name] === undefined) {
+      settings[name] = defaultValue;
+    }
+  }
+  ensureSetting('port', util.env.p || 2000);
+  ensureSetting('production', !!util.env.production);
+  ensureSetting('watch', !!(util.env.w || util.env.watch));
+
   var runSequence = require('run-sequence').use(gulp);
 
   defineTasks(gulp, settings, requireDir('./tasks', { recurse: true }));

@@ -8,7 +8,7 @@ module.exports = function (gulp) {
     return gulp.src('./demo/index.html')
       .pipe(swig({
         data: {
-          projectVersion: utils.getPackageVersion()
+          projectVersion: utils.getPackage().version
         }
       }))
       .pipe(gulp.dest('./dist'))

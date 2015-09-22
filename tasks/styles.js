@@ -3,6 +3,7 @@ var connect = require('gulp-connect');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
+var utils = require('../utils');
 
 module.exports = function (gulp, settings) {
   return function () {
@@ -10,7 +11,7 @@ module.exports = function (gulp, settings) {
       .pipe(sass({
         outputStyle: settings.production ? 'compressed' : null
       }).on('error', sass.logError))
-      .pipe(rename(settings.project.name + '-' + settings.project.version + '.css'))
+      .pipe(rename(utils.getPackage().name + '-' + utils.getPackage().version + '.css'))
       .pipe(gulp.dest('./dist'))
       .pipe(connect.reload());
 

@@ -15,8 +15,8 @@ var watchify = require('watchify');
 
 module.exports = {
 
-  getPackageVersion: function () {
-    return JSON.parse(fs.readFileSync('./package.json')).version;
+  getPackage: function () {
+    return JSON.parse(fs.readFileSync('./package.json'));
   },
 
   wizardify: function (gulp, settings, options) {
