@@ -38,6 +38,7 @@
     "lodash": "^3.10.1",
     "lodash.assign": "^3.2.0",
     "node-qunit-phantomjs": "^1.2.1",
+    "require-dir": "^0.3.0",
     "run-sequence": "^1.1.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
