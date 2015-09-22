@@ -8,12 +8,8 @@ Set of generic gulp tasks used in GateMedia projects.
 Project's sample `gulpfile.js`:
 
 ```js
-'use strict';
-
-var packageInfo = require('./package.json');
 
 var gulp = require('gulp');
-var util = require('gulp-util');
 
 require('gatemedia-gulp-tasks')(gulp, {
   project: {
