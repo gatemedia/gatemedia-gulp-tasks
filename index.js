@@ -42,7 +42,7 @@ module.exports = function (gulp, settings) {
       [ 'code-assets',
         'coding-style',
         'unit-test-assets',
-        'demo-styles', 'demo-assets', 'demo-index'
+        'demo/js', 'demo/styles', 'demo/assets', 'demo/index'
       ],
       ['serve', 'watch']);
   });

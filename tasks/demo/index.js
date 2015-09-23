@@ -1,7 +1,7 @@
 
 var swig = require('gulp-swig');
 var connect = require('gulp-connect');
-var utils = require('../utils');
+var utils = require('../../utils');
 
 module.exports = function (gulp) {
   return function () {

@@ -4,11 +4,8 @@ var _ = require('lodash');
 module.exports = function (gulp, settings) {
   return function () {
     var dependencies = {
-      'lib/styles/**/*': [
-        'styles'
-      ],
-      'demo/styles/**/*': [
-        'demo-styles'
+      '{lib,tests,demo}/**/*': [
+        'coding-style'
       ],
       'lib/javascripts/{.,core}/*': [
         'js-core',
@@ -18,26 +15,29 @@ module.exports = function (gulp, settings) {
         'js-addons',
         'test/unit/js'
       ],
+      'lib/styles/**/*': [
+        'styles'
+      ],
       'lib/images/**/*': [
         'images'
-      ],
-      'demo/{fonts}/**/*': [
-        'demo-assets'
-      ],
-      'demo/index.html': [
-        'demo-index'
-      ],
-      'tests/unit/**/*': [
-        'test/unit/js'
-      ],
-      'tests/runner/*': [
-        'test/helpers'
       ],
       'tests/runner/unit/**/*': [
         'test/unit/assets'
       ],
-      '{lib,tests,demo}/**/*': [
-        'coding-style'
+      'tests/{runner/helpers.js,unit/**/*}': [
+        'test/unit/js'
+      ],
+      'demo/index.html': [
+        'demo/index'
+      ],
+      'demo/javascripts/**/*': [
+        'demo/js'
+      ],
+      'demo/{fonts}/**/*': [
+        'demo/assets'
+      ],
+      'demo/styles/**/*': [
+        'demo/styles'
       ]
     };
 
