@@ -21,7 +21,10 @@ require('gatemedia-gulp-tasks')(gulp, {
       './lib/javascripts/addons/addon1.jsx'
     ],
 
-    libs: [ // not packaged
+    libs: [
+      './vendor/some-lib.js'
+    ],
+    externalLibs: [ // not packaged
       'react',
       'reflux',
       'sinon-es6'
@@ -35,6 +38,7 @@ require('gatemedia-gulp-tasks')(gulp, {
 
   * `coding-style`: check code against coding style rules. See [semistandard](https://github.com/Flet/semistandard)
   * `js-core`: package core project sources in `./dist/<PACKAGE.NAME>-<PACKAGE.VERSION>.js`
+  * `js-libs`: package project libraries sources in `./dist/<PACKAGE.NAME>-libs-<PACKAGE.VERSION>.js`
   * `js-addons`: package project addons sources in `./dist/<PACKAGE.NAME>-addons-<PACKAGE.VERSION>.js`
   * `styles`: package project stylesheet in `./dist/<PACKAGE.NAME>-<PACKAGE.VERSION>.css`
   * `images`: copy project images from `lib/images/**/*` to `./dist/assets/images`

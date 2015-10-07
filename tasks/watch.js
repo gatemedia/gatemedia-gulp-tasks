@@ -16,10 +16,16 @@ module.exports = function (gulp, settings) {
         'test/unit/js'
       ],
       'lib/styles/**/*': [
-        'styles'
+        'css-core'
       ],
       'lib/images/**/*': [
         'images'
+      ],
+      'vendor/**/*.js': [
+        'js-libs'
+      ],
+      'vendor/**/*.css': [
+        'css-libs'
       ],
       'tests/runner/unit/**/*': [
         'test/unit/assets'
@@ -33,11 +39,11 @@ module.exports = function (gulp, settings) {
       'demo/javascripts/**/*': [
         'demo/js'
       ],
+      'demo/styles/**/*': [
+        'demo/css'
+      ],
       'demo/{fonts}/**/*': [
         'demo/assets'
-      ],
-      'demo/styles/**/*': [
-        'demo/styles'
       ]
     };
 

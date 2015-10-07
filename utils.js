@@ -38,7 +38,7 @@ module.exports = {
 
     function rebundle () {
       var stream = bundler
-        .external(settings.project.libs)
+        .external(settings.project.externalLibs)
         .bundle()
         .on('error', notify.onError({
           title: settings.project.name,

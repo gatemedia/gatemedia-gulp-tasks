@@ -1,8 +1,8 @@
 
 var _ = require('lodash');
-var util = require('gulp-util');
-var requireDir = require('require-dir');
 var chalk = require('chalk');
+var requireDir = require('require-dir');
+var util = require('gulp-util');
 
 function defineTasks (gulp, settings, obj, prefix) {
   _.keys(obj).forEach(function (key) {
@@ -31,7 +31,7 @@ module.exports = function (gulp, settings) {
 
   defineTasks(gulp, settings, requireDir('./tasks', { recurse: true }));
 
-  gulp.task('code-assets', ['images', 'styles', 'js-core', 'js-addons']);
+  gulp.task('code-assets', ['images', 'css-core', 'css-libs', 'js-core', 'js-libs', 'js-addons']);
   gulp.task('unit-test-assets', ['test/unit/js', 'test/unit/assets']);
 
   gulp.task('default', function () {
@@ -42,7 +42,7 @@ module.exports = function (gulp, settings) {
       [ 'code-assets',
         'coding-style',
         'unit-test-assets',
-        'demo/js', 'demo/styles', 'demo/assets', 'demo/index'
+        'demo/js', 'demo/css', 'demo/assets', 'demo/index'
       ],
       ['serve', 'watch']);
   });

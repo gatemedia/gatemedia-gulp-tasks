@@ -1,10 +1,12 @@
 
+var chalk = require('chalk');
 var shell = require('gulp-shell');
+var util = require('gulp-util');
 
 module.exports = function (gulp, settings) {
   return function () {
     if (!settings.watch) {
-      console.warn('Watch option (-w) not set: failing on coding style errors');
+      util.log(chalk.yellow('Watch option (-w) not set: failing on coding style errors'));
     }
 
     return gulp.src('')
