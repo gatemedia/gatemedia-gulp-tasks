@@ -1,4 +1,5 @@
 
+var _ = require('lodash');
 var fs = require('fs');
 var assign = require('lodash.assign');
 var babelify = require('babelify');
@@ -6,6 +7,7 @@ var browserify = require('browserify');
 var buffer = require('vinyl-buffer');
 var connect = require('gulp-connect');
 var notify = require('gulp-notify');
+var path = require('path');
 var rename = require('gulp-rename');
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
@@ -23,7 +25,7 @@ module.exports = {
     var customOpts = {
       entries: options.entries,
       extensions: ['.js', '.jsx'],
-      standalone: options.namespace,
+      standalone: options.makePublicAs,
       debug: !settings.production,
       cache: {}, // required for watchify
       packageCache: {}, // required for watchify
@@ -64,5 +66,10 @@ module.exports = {
     bundler.on('log', util.log);
 
     return rebundle;
+  },
+
+  buildNamespace: function (namespace, entry) {
+    var name = path.basename(entry, path.extname(entry));
+    return [namespace, _.capitalize(_.camelCase(name))].join('.');
   }
 };
