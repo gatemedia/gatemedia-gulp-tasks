@@ -5,6 +5,9 @@ var path = require('path');
 
 module.exports = function (gulp, settings) {
   return function () {
+    if (settings.project.addonEntries.length === 0) {
+      return null;
+    }
     var tasks = settings.project.addonEntries.map(function (entry) {
       var addon = path.basename(entry, path.extname(entry));
       return utils.wizardify(gulp, settings, {
