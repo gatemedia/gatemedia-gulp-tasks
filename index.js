@@ -40,8 +40,9 @@ module.exports = function (gulp, settings) {
   gulp.task('demo', function () {
     runSequence('clean',
       [ 'code-assets',
-        'coding-style',
-        'unit-test-assets',
+        'coding-style'
+      ],
+      [ 'unit-test-assets',
         'demo/js', 'demo/css', 'demo/assets', 'demo/index'
       ],
       ['serve', 'watch']);
