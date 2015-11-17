@@ -1,6 +1,6 @@
 {
   "name": "gatemedia-gulp-tasks",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Set of generic gulp tasks used in GateMedia projects",
   "main": "index.js",
   "scripts": {
